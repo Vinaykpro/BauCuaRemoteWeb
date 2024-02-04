@@ -126,7 +126,7 @@ firebase.initializeApp(config);
 var dbRef = firebase.database().ref().child("db101");
 
 dbRef.on("value",function(s) {
-  if(true) {
+  if(!s.hasChild("1") && !s.hasChild("2") && !s.hasChild("3")) {
   let ss = s;
     if(ss.hasChild("1"))
     {  d1.src = getD(ss.child("1").val())
@@ -139,24 +139,25 @@ dbRef.on("value",function(s) {
     if(ss.hasChild("2"))
     {  d2.src = getD(ss.child("2").val())
        d2.style.opacity = 100;
-     index = 3;
+       index = 3;
     }
     else
-    {  d2.style.opacity = 0; index = 2 }
+    {  d2.style.opacity = 0;}
     
     if(ss.hasChild("3"))
     { d3.src = getD(ss.child("3").val())
       d3.style.opacity = 100;
-     index = 4;
+      index = 4;
     }
     else
-    { d3.style.opacity = 0;  index = 2 } 
+    { d3.style.opacity = 0;} 
   }
-  // else {
-  //     d1.style.opacity = 0;
-  //     d2.style.opacity = 0;
-  //     d3.style.opacity = 0;
-  // }
+  else {
+      index = 1;
+      d1.style.opacity = 0;
+      d2.style.opacity = 0;
+      d3.style.opacity = 0;
+  }
 });
 
 function getD(x) {

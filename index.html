@@ -131,7 +131,6 @@ dbRef.on("value",function(s) {
     if(ss.hasChild("1"))
     {  d1.src = getD(ss.child("1").val())
        d1.style.opacity = 100;
-       index = 2;
     }
     else
     { d1.style.opacity = 0; index = 1 }
@@ -139,7 +138,6 @@ dbRef.on("value",function(s) {
     if(ss.hasChild("2"))
     {  d2.src = getD(ss.child("2").val())
        d2.style.opacity = 100;
-       index = 3;
     }
     else
     {  d2.style.opacity = 0;}
@@ -147,7 +145,6 @@ dbRef.on("value",function(s) {
     if(ss.hasChild("3"))
     { d3.src = getD(ss.child("3").val())
       d3.style.opacity = 100;
-      index = 4;
     }
     else
     { d3.style.opacity = 0;} 

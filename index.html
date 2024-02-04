@@ -41,7 +41,7 @@
 #clr {
     margin-top:20px;
     width:90vw;
-    height:auto;
+    height:6vh;
     border-radius:20px;
     text-decoration:none;
     outline:none;
@@ -127,21 +127,21 @@ var dbRef = firebase.database().ref().child("db101");
 dbRef.on("value",function(s) {
   if(true) {
   let ss = s;
-    if(ss.hasChild("d1"))
+    if(ss.hasChild("1"))
     {  d1.src = getD(ss.child("1").val())
        d1.style.opacity = 100;
     }
     else
     { d1.style.opacity = 0;}
     
-    if(ss.hasChild("d2"))
+    if(ss.hasChild("2"))
     {  d2.src = getD(ss.child("2").val())
        d2.style.opacity = 100;
     }
     else
     {  d2.style.opacity = 0;}
     
-    if(ss.hasChild("d3"))
+    if(ss.hasChild("3"))
     { d3.src = getD(ss.child("3").val())
       d3.style.opacity = 100;
     }
